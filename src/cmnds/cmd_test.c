@@ -13,6 +13,10 @@
 
 #if ENABLE_TEST_COMMANDS
 
+void CMD_Hello(const void *context, const char *cmd, const char *args) {
+    CMD_AppendResult(context, "Hello from my custom firmware!");
+}
+
 static commandResult_t CMD_TimeSize(const void* context, const char* cmd, const char* args, int cmdFlags) {
 	ADDLOG_INFO(LOG_FEATURE_CMD, "sizeof(time_t) = %i, sizeof(int) = %i", sizeof(time_t), sizeof(int));
 	return CMD_RES_OK;
